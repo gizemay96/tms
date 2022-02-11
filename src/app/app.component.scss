@@ -1,0 +1,9 @@
+.active-slide{
+    width: 85% !important;
+    transition: width 900ms;
+}
+
+.inactive-slide{
+    filter: brightness(0.5);
+    transition: filter 2s;
+}
