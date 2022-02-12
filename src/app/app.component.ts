@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, NgZone, ViewChild } from "@angular/core";
 import { SwiperComponent } from "swiper/angular";
 
 // import Swiper core and required components
-import SwiperCore , {
+import SwiperCore, {
   Navigation,
   Pagination,
   Scrollbar,
@@ -42,29 +42,39 @@ export class AppComponent {
   thumbs: any;
   slides$ = new BehaviorSubject<string[]>(['']);
 
-  activeSlide = 2;
+  activeSlide: number | undefined;
   initChange = true;
 
 
-  constructor(private cd: ChangeDetectorRef, private ngZone: NgZone) {}
-  ngOnInit() {}
+  constructor(private cd: ChangeDetectorRef, private ngZone: NgZone
+    
+    ) { }
+  ngOnInit() { }
 
   ngAfterViewInit(): void {
-   this.slideTo(this.activeSlide)
+    this.slideTo(2)
   }
 
-  slideTo(ind: number){
+  slideTo(ind: number) {
     this.swipe?.swiperRef.slideTo(ind);
     this.activeSlide = ind;
     setTimeout(() => {
       this.initChange = false;
-    }, 500);
+    }, 200);
   }
 
-  slideChange(event: any){
-    if(this.initChange !== true){
-    this.activeSlide =  event[0].realIndex;
+  slideChange(event: any) {
+    if (this.initChange === false) {
+      this.activeSlide = event[0].realIndex;
+      this.cd.detectChanges();
+      console.log(this.activeSlide)
     }
   }
+
+  getActiveSlideForBody(){
+    console.log(this.activeSlide)
+    return this.activeSlide;
+  }
+
 
 }
