@@ -1,0 +1,250 @@
+<section class="home">
+     <nav class="navbar navbar-expand-lg">
+         <div class="container">
+             <div class="logo">
+                 <a class="navbar-brand" href="#">The Moon Studio</a>
+             </div>
+             <div>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+                 <div class="collapse navbar-collapse" id="navbarScroll">
+                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                         <li class="nav-item" (click)="goToAnchor('contact' , 2)">
+                             <a class="nav-link active" aria-current="page">Hakkımızda</a>
+                         </li>
+                         <li class="nav-item" (click)="goToAnchor('slide' , 0)">
+                             <a class="nav-link" href="#">Hizmetlerimiz</a>
+                         </li>
+                         <li class="nav-item" (click)="goToAnchor('slide' , 3)">
+                             <a class="nav-link" href="#">Projelerimiz</a>
+                         </li>
+                         <li class="nav-item" (click)="goToAnchor('slide' , 2)">
+                             <a class="nav-link" href="#">Fiyatlandırma</a>
+                         </li>
+                         <li class="nav-item" (click)="goToAnchor('slide' , 1)">
+                              <a class="nav-link" href="#">Ekibimiz</a>
+                          </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </nav>
+     <div class="body h-100">
+         <div class="container h-100">
+             <div class="greeting">
+                 <div>
+                     <h1 style="color: aliceblue;">The Moon Studio</h1>
+                     <div class="press-btn d-flex justify-content-center mt-5">
+                         <button class="btn btn-lg btn-outline">Press Start</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+ 
+ 
+ <section>
+ 
+     <div class="pt-5" id="slide">
+         <div class="container">
+             <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" class="mySwiper" [loop]="true" (slideChange)="slideChange($event)" [slideToClickedSlide]="true" [speed]="900" #swipe>
+                 <ng-template swiperSlide>
+                     <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 31.png" alt="">
+                     <h5 [ngClass]="activeSlide === 0 ? 'active-text' : 'inactive-text'">HİZMETLERİMİZ</h5>
+                 </ng-template>
+                 <ng-template swiperSlide>
+                     <img [ngClass]="activeSlide === 1 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 32.png" alt="">
+                     <h5 [ngClass]="activeSlide === 1 ? 'active-text' : 'inactive-text'">EKİBİMİZ</h5>
+                 </ng-template>
+                 <ng-template swiperSlide>
+                     <img [ngClass]="activeSlide === 2 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 33.png" alt="">
+                     <h5 [ngClass]="activeSlide === 2 ? 'active-text' : 'inactive-text'">FİYATLANDIRMA</h5>
+                 </ng-template>
+                 <ng-template swiperSlide>
+                     <img [ngClass]="activeSlide === 3 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 34.png" alt="">
+                     <h5 [ngClass]="activeSlide === 3 ? 'active-text' : 'inactive-text'">PROJELERİMİZ</h5>
+                 </ng-template>
+             </swiper>
+         </div>
+     </div>
+ 
+     <div class="body mt-5">
+ 
+         <!-- Hizmet -->
+         <div *ngIf="activeSlide === 0" class="hizmet">
+             <div class="content d-flex justify-content-center w-100">
+                 <div>
+                     <div class="d-flex justify-content-center w-100">
+                         <div class="header d-flex justify-content-center">
+                             Size Hizmet Verdiğimiz İçin Çok Şanslıyız!
+                         </div>
+                     </div>
+                     <div class="content-body">
+                         <div class="row row-cols-1 row-cols-md-3 g-4">
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/coding 1.png" alt="">
+                                         <h5>Web Tasarımı</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/laptop 2.png" alt="">
+                                         <h5>Web Uygulama</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/smartphone (1) 1.png" alt="">
+                                         <h5>Mobil Uygulama</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/gamepad 1.png" alt="">
+                                         <h5>Oyun Geliştirme</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/lightbulb 1.png" alt="">
+                                         <h5>Yaratıcı Fikirler</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/customer-support 1.png" alt="">
+                                         <h5>Satış Sonrası Destek</h5>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Team -->
+         <div *ngIf="activeSlide === 1" class="team">
+ 
+             <div class="content d-flex justify-content-center w-100">
+                 <div>
+                     <div class="d-flex justify-content-center w-100">
+                         <div class="header d-flex justify-content-center">
+                            Ekibimiz
+                         </div>
+                     </div>
+                     <div class="content-body content-body-team">
+                         <div class="row row-cols-1 row-cols-md-3 g-4">
+                             <div class="col">
+                                 <div class="card card-team text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/guliz 1.png" alt="">
+                                         <div class="name-title">
+                                             <h4>Güliz Ay</h4>
+                                             <h5 style="font-weight: 300;">Backend Developer</h5>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card card-team text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/gizem 1.png" alt="">
+                                         <div class="name-title">
+                                             <h4>Gizem Ay</h4>
+                                             <h5 style="font-weight: 300;">FrontEnd Developer</h5>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card card-team text-center">
+                                     <div class="card-body">
+                                         <img src="../assets/gizem 1.png" alt="">
+                                         <div class="name-title">
+                                             <h4>Eda Balcı</h4>
+                                             <h5 style="font-weight: 300;">UI/UX Designer</h5>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+ 
+         <!-- Pricing -->
+         <div *ngIf="activeSlide === 2" class="pricing">
+             <div class="content d-flex justify-content-center w-100">
+                 <div>
+                     <div class="d-flex justify-content-center w-100">
+                         <div class="header d-flex justify-content-center">
+                             Özel Tasarımlar Ve İstekleriniz İçin İletişime Geçiniz.
+                         </div>
+                     </div>
+                     <div class="content-body">
+                         <div class="row row-cols-1 row-cols-md-3 g-4">
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <h5 class="card-title">EKONOMİK</h5>
+                                         <p class="card-text">
+                                             1 Web Site <br> 6 Ay Ücretsiz Destek <br> Hazır Template
+                                         </p>
+                                         <h2>400 ₺</h2>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <h5 class="card-title">E-TİCARET</h5>
+                                         <p class="card-text">
+                                             Sınırsız Sayfa <br> 12 Ay Ücretsiz Destek <br> Hazır Template
+                                         </p>
+                                         <h2>2500 ₺</h2>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="col">
+                                 <div class="card text-center">
+                                     <div class="card-body">
+                                         <h5 class="card-title">KURUMSAL</h5>
+                                         <p class="card-text">
+                                             Maksimum 10 Sayfa <br> 9 Ay Ücretsiz Destek <br> Hazır Template
+                                         </p>
+                                         <h2>1000 ₺</h2>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+ 
+ 
+ 
+ 
+     </div>
+ 
+ </section>
+
+ <section id="contact">
+
+ </section>
