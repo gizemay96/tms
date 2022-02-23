@@ -39,12 +39,14 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
   @ViewChild('swipe', { static: false }) swipe?: SwiperComponent;
+  @ViewChild('swipeProject', { static: false }) swipeProjetc?: SwiperComponent;
 
   show: boolean | any;
   thumbs: any;
   slides$ = new BehaviorSubject<string[]>(['']);
 
   activeSlide: number | undefined;
+  activeSlideProject: number | any;
   initChange = true;
 
 
@@ -52,7 +54,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   ngAfterViewInit(): void {
-    this.slideTo(2)
+    this.slideToProjects(0);
+    this.slideTo(3);
   }
 
   slideTo(ind: number) {
@@ -63,11 +66,20 @@ export class HomeComponent implements OnInit {
     }, 200);
   }
 
-  slideChange(event: any) {
-    if (this.initChange === false) {
+  slideToProjects(ind: number) {
+    this.swipeProjetc?.swiperRef.slideTo(ind);
+    this.activeSlideProject = ind;
+  }
+
+  slideChange(event: any , type = 'tabs') {
+    if (this.initChange === false && type === 'tabs') {
       this.activeSlide = event[0].realIndex;
       this.cd.detectChanges();
       console.log(this.activeSlide)
+    } else if(this.initChange === false && type === 'project'){
+      this.activeSlideProject = event[0].realIndex;
+      this.cd.detectChanges();
+      console.log(this.activeSlideProject)
     }
   }
 
@@ -80,6 +92,11 @@ export class HomeComponent implements OnInit {
   goToAnchor(section = '' , slideInd = 2){
     this.router.navigate([''] , {fragment: section})
     this.slideTo(slideInd);
+  }
+
+
+  getPage(hrefLink : any){
+    window.open(hrefLink, '_blank');
   }
 
 }
