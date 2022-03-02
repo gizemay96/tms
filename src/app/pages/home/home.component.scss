@@ -1,184 +1,252 @@
 .active-slide-img {
-  width: 75% !important;
-  transition: width 900ms;
+    width: 75%;
+    transition: width 900ms;
 }
 
 .inactive-slide-img {
-  filter: brightness(0.5);
-  transition: filter 2s;
-  width: 45%;
+    filter: brightness(0.5);
+    transition: filter 2s;
+    width: 45%;
 }
 
 .active-slide-project {
-  width: 70% !important;
-  transition: width 900ms;
-  cursor: pointer;
+    width: 70%;
+    transition: width 900ms;
+    cursor: pointer;
 }
 
 .inactive-slide-project {
-  filter: brightness(0.5);
-  transition: filter 2s;
-  width: 60%;
-  cursor: pointer;
+    filter: brightness(0.5);
+    transition: filter 2s;
+    width: 60%;
+    cursor: pointer;
 }
 
-
 .nav {
-  height: 50px;
-  background-color: black;
+    height: 50px;
+    background-color: black;
 }
 
 .active-text {
-  color: white;
-  font-size: 30px;
-  margin-top: 20px;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .inactive-text {
-  color: rgba(255, 255, 255, 0.548);
-  font-size: 20px;
-  margin-top: -30px;
+    color: rgba(255, 255, 255, 0.548);
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+.slide-page {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.home {
+    .body {
+        height: 85vh;
+        .container {
+            display: flex;
+            align-items: center;
+        }
+    }
 }
 
 .content {
-  .header {
-    background-color: rgb(235 233 233 / 3%);
-    height: 30px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    padding: 10px;
-    color: white;
-    min-width: 25%;
-  }
-
-  .content-body {
-    background-color: rgb(235 233 233 / 3%);
-    border-radius: 20px;
-    padding: 50px;
-
-    .card {
-      width: 250px;
-      background-color: rgb(239 239 239);
-      color: #001123;
-      border-radius: 15px;
-
-      p {
-        margin-top: 15px;
-        font-size: 13px;
-        font-weight: 300;
-        margin-bottom: 15px;
-      }
+    .header {
+        background-color: rgb(235 233 233 / 3%);
+        height: 30px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        padding: 10px;
+        color: white;
+        min-width: 25%;
     }
-
-    .card-team {
-      background: none;
-      border: none;
-
-      img {
-        width: 218px;
-        height: 218px;
-      }
-
-      .name-title {
-        border-radius: 15px;
-        color: rgb(239 239 239);
-        margin-top: 15px;
-        padding: 15px;
-      }
+    .content-body {
+        background-color: rgb(235 233 233 / 3%);
+        border-radius: 20px;
+        padding: 50px;
+        .card {
+            width: 250px;
+            background-color: rgb(239 239 239);
+            color: #001123;
+            border-radius: 15px;
+            p {
+                margin-top: 15px;
+                font-size: 13px;
+                font-weight: 300;
+                margin-bottom: 15px;
+            }
+        }
+        .card-team {
+            background: none;
+            border: none;
+            img {
+                width: 218px;
+                height: 218px;
+            }
+            .name-title {
+                border-radius: 15px;
+                color: rgb(239 239 239);
+                margin-top: 15px;
+                padding: 15px;
+            }
+        }
     }
-  }
-
-  .content-body-team {
-    padding: 5px 50px;
-  }
+    .content-body-team {
+        padding: 5px 50px;
+    }
 }
 
 .hizmet {
-  .content-body {
-    max-width: 950px;
-  }
-
-  .row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .col {
-    max-width: 270px;
-  }
-
-  .card {
-    background-color: rgba(255, 255, 255, 0) !important;
-    color: white !important;
-    max-width: 260px;
-  }
-
-  .card-body {
-    img {
-      height: 50px;
+    .content-body {
+        max-width: 950px;
     }
-
-    h5 {
-      margin-top: 10px;
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-  }
+    .col {
+        max-width: 270px;
+    }
+    .card {
+        background-color: rgba(255, 255, 255, 0) !important;
+        color: white !important;
+        max-width: 260px;
+    }
+    .card-body {
+        img {
+            height: 50px;
+        }
+        h5 {
+            margin-top: 10px;
+        }
+    }
 }
 
 .projects {
+    .content-body {
+        padding: 25px 30px !important;
+        max-width: 60%;
+        color: rgb(0, 0, 0) !important;
+    }
+    a {
+        text-decoration: none;
+    }
+    .project-link-case {
+        margin-top: -2vw;
+        width: 50%;
+        cursor: pointer;
+    }
+    .link-bg {
+        width: 100%;
+        padding: 8px 10px;
+        background: #001123;
+        border-radius: 5px;
+        padding-top: 40px;
+        box-shadow: 0px 5px 8px -5px grey;
+        cursor: pointer;
+        display: block;
+    }
+    .link {
+        cursor: pointer;
+        font-size: 12px;
+        color: white;
+    }
+}
 
-  .header{
-    background-color: #EBE9E9 !important;
-    color: rgb(0, 0, 0) !important;
-  }
-  .content-body {
-    padding: 25px 30px !important;
-    background-color: #EBE9E9 !important;
-    color: rgb(0, 0, 0) !important;
-  }
+.contact-page {
+    .card-div-img {
+        display: flex;
+        justify-content: end;
+        img {
+            width: 60%;
+            margin-right: 60px;
+        }
+    }
+    .card-div {
+        display: flex;
+        justify-content: center;
+    }
+}
 
-  a{
-    text-decoration: none;
-  }
+.contact-card {
+    background-color: #EBE9E9;
+    border-radius: 15px;
+    padding: 30px 30px 0px 30px;
+    max-width: 600px;
+    height: 450px;
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 45px;
+    }
+}
 
-  .project-link-case {
-    margin-top: -2vw;
-    width: 50%;
-    cursor: pointer;
-  }
-  
-  .link-bg {
+.social-icons {
+    margin-top: 3rem;
+}
+
+.icon {
+    width: 25px;
+}
+
+.text-contact {
+    font-weight: 300;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.line {
+    height: 1px;
     width: 100%;
-    padding: 8px 10px;
-    background: #001123;
-    border-radius: 5px;
-    padding-top: 40px;
-    box-shadow: 0px 5px 8px -5px grey;
-    cursor: pointer;
-    display: block;
-  }
-  
-  .link {
-    cursor: pointer;
-    font-size: 12px;
-    color: white;
-  }
+    background-color: #001123;
+    margin-top: 15px;
 }
 
-
-
-
-.contact-card{
-  background-color: #EBE9E9;
-  border-radius: 15px;
-  padding: 20px 0;
-  max-width: 620px;
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
-.icon{
-  width: 25px;
+.example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
 }
 
-.text-contact{
-  margin-left: 10px;
+h1.example-app-name {
+    margin-left: 8px;
+}
+
+.example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+}
+
+.sidebar {
+    position: absolute;
+    height: 100%;
+    background: #0a0c24;
+    z-index: 99;
+    width: 50%;
+}
+
+.moon-icon {
+    display: none;
 }

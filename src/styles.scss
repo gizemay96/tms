@@ -4,6 +4,7 @@
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
 @import 'swiper/scss';
+@import './assets/style/media.scss';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body,
@@ -22,12 +23,12 @@ section {
     overflow: auto;
 }
 
-i{
+i {
     font-family: "FontAwesome";
 }
 
 .home {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('./assets/bg-main.png');
     background-position: center;
     background-size: cover;
@@ -62,7 +63,8 @@ i{
         align-items: center;
     }
 }
-.slide-page{
+
+.slide-page {
     padding-bottom: 80px;
 }
 
@@ -80,31 +82,45 @@ i{
     max-width: 350px;
 }
 
-.test-class{
+.test-class {
     background: #77707000 !important;
     color: #000;
     text-align: center;
     line-height: 300px;
     max-width: 280px;
-  
     flex-shrink: 0;
     width: 100%;
     height: 100%;
     position: relative;
     transition-property: transform;
-  }
-
-  .swiper-pagination{
-      bottom: -6px !important;
-      z-index: -1;
-  }
-
-
-  .contact-page {
-    height: 100vh;
 }
 
-.social-icon{
-    margin-right: 15px;
-    width: 52px;
+.swiper-pagination {
+    bottom: -6px !important;
+    z-index: -1;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(250, 235, 215, 0.685);
+    opacity: unset;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #144f9e;
+}
+
+.social-icon {
+    margin-right: 30px;
+    width: 50px;
+    cursor: pointer;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

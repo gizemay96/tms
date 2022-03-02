@@ -1,16 +1,37 @@
+<mat-drawer #drawer class="sidebar">
+    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <li class="nav-item" (click)="goToAnchor('contact' , 2 , true)">
+            <a class="nav-link" aria-current="page">Hakkımızda</a>
+        </li>
+        <li class="nav-item" (click)="goToAnchor('slide' , 0 , true)">
+            <a class="nav-link" href="#">Hizmetlerimiz</a>
+        </li>
+        <li class="nav-item" (click)="goToAnchor('slide' , 3 , true)">
+            <a class="nav-link" href="#">Projelerimiz</a>
+        </li>
+        <li class="nav-item" (click)="goToAnchor('slide' , 2 , true)">
+            <a class="nav-link" href="#">Fiyatlandırma</a>
+        </li>
+        <li class="nav-item" (click)="goToAnchor('slide' , 1 , true)">
+            <a class="nav-link" href="#">Ekibimiz</a>
+        </li>
+    </ul>
+</mat-drawer>
 <section class="home">
+
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <div class="logo">
                 <a class="navbar-brand" href="#">The Moon Studio</a>
             </div>
             <div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+                <span class="">
+          <img class="moon-icon" style="width: 30px;" mat-raised-button (click)="drawer.toggle()" src="../../../assets/moon.png" alt="">
+        </span>
+
+                <div class="c">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item" (click)="goToAnchor('contact' , 2)">
                             <a class="nav-link active" aria-current="page">Hakkımızda</a>
                         </li>
@@ -31,7 +52,7 @@
             </div>
         </div>
     </nav>
-    <div class="body h-100">
+    <div class="body">
         <div class="container h-100">
             <div class="greeting">
                 <div>
@@ -50,26 +71,21 @@
 
     <div class="pt-5" id="slide">
         <div class="container">
-            <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="30" class="mySwiper" [loop]="true"
-                (slideChange)="slideChange($event)" [slideToClickedSlide]="true" [speed]="900" #swipe>
+            <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="sliderMargin" class="mySwiper" [loop]="true" (slideChange)="slideChange($event)" [slideToClickedSlide]="isDesktopDevice" [speed]="900" #swipe>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'"
-                        src="../assets/Group 31.png" alt="">
+                    <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 31.png" alt="">
                     <h5 [ngClass]="activeSlide === 0 ? 'active-text' : 'inactive-text'">HİZMETLERİMİZ</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 1 ? 'active-slide-img' : 'inactive-slide-img'"
-                        src="../assets/Group 32.png" alt="">
+                    <img [ngClass]="activeSlide === 1 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 32.png" alt="">
                     <h5 [ngClass]="activeSlide === 1 ? 'active-text' : 'inactive-text'">EKİBİMİZ</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 2 ? 'active-slide-img' : 'inactive-slide-img'"
-                        src="../assets/Group 33.png" alt="">
+                    <img [ngClass]="activeSlide === 2 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 33.png" alt="">
                     <h5 [ngClass]="activeSlide === 2 ? 'active-text' : 'inactive-text'">FİYATLANDIRMA</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 3 ? 'active-slide-img' : 'inactive-slide-img'"
-                        src="../assets/Group 34.png" alt="">
+                    <img [ngClass]="activeSlide === 3 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 34.png" alt="">
                     <h5 [ngClass]="activeSlide === 3 ? 'active-text' : 'inactive-text'">PROJELERİMİZ</h5>
                 </ng-template>
             </swiper>
@@ -253,36 +269,30 @@
                             Projelerimiz
                         </div>
                     </div>
-
                     <div class="d-flex justify-content-center">
-                        <div class="content-body" style="max-width: 60%;">
-                            <swiper [slidesPerView]="'auto'" [centeredSlides]="false" class="swipeProject" [loop]="true"
-                                [pagination]="{clickable: true}" (slideChange)="slideChange($event , 'project')"
-                                [slideToClickedSlide]="true" slideClass="test-class" [speed]="900" #swipeProject>
-                                <ng-template swiperSlide>
+                        <div class="content-body">
+                            <swiper [slidesPerView]="'auto'" [centeredSlides]="false" class="swipeProject" [loop]="true" [pagination]="{clickable: true}" (slideChange)="slideChange($event , 'project')" [spaceBetween]="projectSlideMargin" [slideToClickedSlide]="isDesktopDevice" slideClass="test-class"
+                                [speed]="900" #swipeProject>
+                                <ng-template swiperSlide class="zIndex">
                                     <div>
                                         <div>
-                                            <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'"
-                                                src="../assets/lemodate.png" alt="">
+                                            <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lemodate.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 0" class="container project-link-case"
-                                            (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 0" class="container project-link-case" (click)="getPage('http://lemodate.com')">
                                             <button class="link-bg">
-                                                <h6 class="m-0 p-0 link">
-                                                    Lemodate
-                                                </h6>
-                                            </button>
+                        <h6 class="m-0 p-0 link">
+                          Lemodate
+                        </h6>
+                      </button>
                                         </div>
                                     </div>
                                 </ng-template>
                                 <ng-template swiperSlide>
                                     <div>
                                         <div>
-                                            <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'"
-                                                src="../assets/gameshop.png" alt="">
+                                            <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/gameshop.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 1" class="container project-link-case"
-                                            (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage('http://lemodate.com')">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">Gameshop</h6>
                                             </div>
@@ -292,11 +302,9 @@
                                 <ng-template swiperSlide>
                                     <div>
                                         <div>
-                                            <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'"
-                                                src="../assets/lotus.png" alt="">
+                                            <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lotus.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 2" class="container project-link-case"
-                                            (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 2" class="container project-link-case" (click)="getPage('http://lemodate.com')">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">Lotus</h6>
                                             </div>
@@ -306,11 +314,9 @@
                                 <ng-template swiperSlide>
                                     <div>
                                         <div>
-                                            <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'"
-                                                src="../assets/new_collection.png" alt="">
+                                            <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/new_collection.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 3" class="container project-link-case"
-                                            (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 3" class="container project-link-case" (click)="getPage('http://lemodate.com')">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">NC</h6>
                                             </div>
@@ -334,30 +340,33 @@
 
 <section id="contact" class="contact-page">
     <div class="container h-100 d-flex align-items-center">
-        <div class="d-flex w-100">
-            <div class="w-100 d-flex ">
-                <div class="">
-                    <img style="width: 40%;" src="../../../assets/contact_img.png" alt="">
+        <div class="d-flex w-100 justify-content-center">
+            <div class="w-100 row d-flex align-items-center">
+                <div class="col-xl-5 card-div-img">
+                    <img src="../../../assets/contact_img.png" alt="">
                 </div>
-                <div class="">
+                <div class="col-xl-7 card-div">
                     <div class="contact-card d-flex justify-content-center align-items-center">
-                        <div>
-                            <h2>Bizimle İletişime Geçin</h2>
+                        <div class="w-80 h-100">
+                            <h1>Bizimle İletişime Geçin</h1>
                             <div class="phone mt-3 d-flex align-items-center">
                                 <div> <img class="icon" src="../../../assets/svg/phone.svg" alt=""></div>
-                                <div class="text-contact">themoonstudio.company@gmail.com</div>
+                                <div class="text-contact">+90 (538) 416 37 80</div>
                             </div>
+                            <div class="line"></div>
                             <div class="mail mt-3 d-flex align-items-center">
                                 <div>
                                     <img class="icon" src="../../../assets/svg/mail.svg" alt="">
                                 </div>
                                 <div class="text-contact">themoonstudio.company@gmail.com</div>
                             </div>
+                            <div class="line"></div>
                             <div class="address mt-3 d-flex align-items-center">
                                 <div><img class="icon" src="../../../assets/svg/address.svg" alt=""></div>
-                                <div class="text-contact">themoonstudio.company@gmail.com</div>
+                                <div class="text-contact">Üsküdar / İstanbul</div>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center social-icons mt-3">
+                            <div class="line"></div>
+                            <div class="d-flex align-items-center justify-content-center social-icons">
                                 <img class="social-icon" src="../../../assets/instagram.png" alt="">
                                 <img class="social-icon" src="../../../assets/facebook.png" alt="">
                                 <img class="social-icon" src="../../../assets/linkedn.png" alt="">

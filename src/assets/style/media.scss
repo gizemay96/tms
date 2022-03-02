@@ -1,0 +1,80 @@
+@media screen and(max-width: 768px) {
+    .active-slide-img {
+        width: 30% !important;
+        transition: width 900ms;
+    }
+    .inactive-slide-img {
+        width: 20% !important;
+    }
+    .active-text {
+        color: white;
+        font-size: 15px !important;
+        margin-top: -50px !important;
+    }
+    .inactive-text {
+        color: rgba(255, 255, 255, 0.548);
+        font-size: 12px !important;
+        margin-top: -70px;
+    }
+    .active-slide-project {
+        width: 40% !important;
+        transition: width 900ms;
+        cursor: pointer;
+    }
+    .inactive-slide-project {
+        filter: brightness(0.5);
+        transition: filter 2s;
+        width: 30% !important;
+        cursor: pointer;
+    }
+    .moon-icon {
+        display: block !important;
+    }
+    .greeting {
+        margin-top: 50%;
+    }
+    .c {
+        display: none;
+    }
+    .nav-link {
+        color: white;
+        margin-left: 15px;
+        margin-top: 20px;
+        a:hover {
+            color: white !important;
+        }
+    }
+    .nav-link:focus,
+    .nav-link:hover {
+        color: white !important;
+        outline: none !important;
+    }
+    .projects {
+        .content-body {
+            padding: 25px 30px !important;
+            max-width: 95% !important;
+            color: rgb(0, 0, 0) !important;
+        }
+        .project-link-case {
+            margin-top: -26vw !important;
+            width: 40% !important;
+            cursor: pointer;
+        }
+    }
+    .zIndex {
+        z-index: 99999 !important;
+    }
+    .contact-page {
+        .card-div-img {
+            justify-content: center !important;
+        }
+        .contact-card {
+            padding: 15px !important;
+        }
+        padding-bottom: 50px;
+    }
+}
+
+.social-icons {
+    margin-top: 2rem !important;
+}

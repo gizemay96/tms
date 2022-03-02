@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, NgZone, OnInit, ViewChild } from "@angular/core";
 import { SwiperComponent } from "swiper/angular";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 // import Swiper core and required components
 import SwiperCore, {
@@ -16,6 +17,7 @@ import SwiperCore, {
 import { BehaviorSubject } from "rxjs";
 import Swiper from "swiper/types/swiper-class";
 import { Router } from "@angular/router";
+import { MatSidenav } from "@angular/material/sidenav";
 
 // install Swiper components
 SwiperCore.use([
@@ -40,6 +42,8 @@ export class HomeComponent implements OnInit {
   @ViewChild('swiperRef', { static: false }) swiperRef?: SwiperComponent;
   @ViewChild('swipe', { static: false }) swipe?: SwiperComponent;
   @ViewChild('swipeProject', { static: false }) swipeProjetc?: SwiperComponent;
+  @ViewChild('drawer', { static: false }) sidenav?: MatSidenav;
+
 
   show: boolean | any;
   thumbs: any;
@@ -48,15 +52,43 @@ export class HomeComponent implements OnInit {
   activeSlide: number | undefined;
   activeSlideProject: number | any;
   initChange = true;
+  showFiller = false;
+
+  deviceInfo: any;
+  sliderMargin = 30;
+  projectSlideMargin = 0;
+
+  isDesktopDevice = true;
+
+  constructor(private cd: ChangeDetectorRef, private router: Router, private deviceService: DeviceDetectorService) {
+    this.epicFunction();
+  }
+
+  epicFunction() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
+    const isMobile = this.deviceService.isMobile();
+    const isTablet = this.deviceService.isTablet();
+    const isDesktopDevice = this.deviceService.isDesktop();
+    this.isDesktopDevice = isDesktopDevice;
+    console.log(isMobile , isTablet , this.deviceInfo)
+    if (isMobile) {
+      this.sliderMargin = -220;
+      this.projectSlideMargin = -175;
+    } else if (isTablet) {
+      this.sliderMargin = 38;
+      this.projectSlideMargin = 15;
+    }
+  }
 
 
-  constructor(private cd: ChangeDetectorRef, private ngZone: NgZone , private router: Router ) { }
+
   ngOnInit() { }
 
   ngAfterViewInit(): void {
     this.slideToProjects(0);
     this.slideTo(3);
   }
+
 
   slideTo(ind: number) {
     this.swipe?.swiperRef.slideTo(ind);
@@ -71,31 +103,39 @@ export class HomeComponent implements OnInit {
     this.activeSlideProject = ind;
   }
 
-  slideChange(event: any , type = 'tabs') {
+  slideChange(event: any, type = 'tabs') {
+    console.log(event)
     if (this.initChange === false && type === 'tabs') {
       this.activeSlide = event[0].realIndex;
       this.cd.detectChanges();
       console.log(this.activeSlide)
-    } else if(this.initChange === false && type === 'project'){
+    } else if (this.initChange === false && type === 'project') {
       this.activeSlideProject = event[0].realIndex;
       this.cd.detectChanges();
       console.log(this.activeSlideProject)
     }
   }
 
-  getActiveSlideForBody(){
+  getbla() {
+    console.log('asdasd')
+  }
+
+  getActiveSlideForBody() {
     console.log(this.activeSlide)
     return this.activeSlide;
   }
 
 
-  goToAnchor(section = '' , slideInd = 2){
-    this.router.navigate([''] , {fragment: section})
+  goToAnchor(section = '', slideInd = 2, isMobile = false) {
+    this.router.navigate([''], { fragment: section })
     this.slideTo(slideInd);
+    if (isMobile) {
+      this.sidenav?.toggle();
+    }
   }
 
 
-  getPage(hrefLink : any){
+  getPage(hrefLink: any) {
     window.open(hrefLink, '_blank');
   }
 
