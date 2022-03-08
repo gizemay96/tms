@@ -81,6 +81,8 @@ export class HomeComponent implements OnInit {
     } else if (isTablet) {
       this.sliderMargin = -100;
       this.projectSlideMargin = 15;
+    } else {
+      this.sliderMargin = 170;
     }
   }
 

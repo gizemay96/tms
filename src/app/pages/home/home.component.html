@@ -72,7 +72,7 @@
 
     <div class="pt-5" id="slide">
         <div class="container">
-            <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="sliderMargin" class="mySwiper" [spaceBetween]="170" [loop]="true" (slideChange)="slideChange($event)" [slideToClickedSlide]="isDesktopDevice" [speed]="900" #swipe>
+            <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="sliderMargin" class="mySwiper" [loop]="true" (slideChange)="slideChange($event)" [slideToClickedSlide]="isDesktopDevice" [speed]="900" #swipe>
                 <ng-template swiperSlide>
                     <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 31.png" alt="">
                     <h5 [ngClass]="activeSlide === 0 ? 'active-text' : 'inactive-text'">HİZMETLERİMİZ</h5>
