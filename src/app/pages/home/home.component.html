@@ -17,6 +17,8 @@
         </li>
     </ul>
 </mat-drawer>
+
+<!-- Home Page -->
 <section class="home">
 
     <nav class="navbar navbar-expand-lg">
@@ -28,7 +30,7 @@
 
                 <span class="">
           <img class="moon-icon" style="width: 30px;" mat-raised-button (click)="drawer.toggle()"
-            src="../../../assets/moon.png" alt="">
+            src="../../../assets/img/hamburger.png" alt="">
         </span>
 
                 <div class="c">
@@ -68,25 +70,26 @@
 </section>
 
 
+<!-- Slide Page -->
 <section class="slide-page">
 
     <div class="pt-5" id="slide">
         <div class="container">
             <swiper [slidesPerView]="'auto'" [centeredSlides]="true" [spaceBetween]="sliderMargin" class="mySwiper" [loop]="true" (slideChange)="slideChange($event)" [slideToClickedSlide]="isDesktopDevice" [speed]="900" #swipe>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 31.png" alt="">
+                    <img [ngClass]="activeSlide === 0 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/img/Group 31.png" alt="">
                     <h5 [ngClass]="activeSlide === 0 ? 'active-text' : 'inactive-text'">HİZMETLERİMİZ</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 1 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 32.png" alt="">
+                    <img [ngClass]="activeSlide === 1 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/img/Group 32.png" alt="">
                     <h5 [ngClass]="activeSlide === 1 ? 'active-text' : 'inactive-text'">EKİBİMİZ</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 2 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 33.png" alt="">
+                    <img [ngClass]="activeSlide === 2 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/img/Group 33.png" alt="">
                     <h5 [ngClass]="activeSlide === 2 ? 'active-text' : 'inactive-text'">FİYATLANDIRMA</h5>
                 </ng-template>
                 <ng-template swiperSlide>
-                    <img [ngClass]="activeSlide === 3 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/Group 34.png" alt="">
+                    <img [ngClass]="activeSlide === 3 ? 'active-slide-img' : 'inactive-slide-img'" src="../assets/img/Group 34.png" alt="">
                     <h5 [ngClass]="activeSlide === 3 ? 'active-text' : 'inactive-text'">PROJELERİMİZ</h5>
                 </ng-template>
             </swiper>
@@ -96,21 +99,21 @@
     <div class="body mt-5">
 
         <!-- Hizmet -->
-        <div *ngIf="activeSlide === 0" class="hizmet">
+        <div *ngIf="activeSlide === 0" class="service">
             <div class="container">
                 <div class="content d-flex justify-content-center w-100">
                     <div class="service-case">
                         <div class="d-flex justify-content-center w-100">
                             <div class="header d-flex justify-content-center">
-                                Size Hizmet Verdiğimiz İçin Çok Şanslıyız!
+                                <span>Size Hizmet Verdiğimiz İçin Çok Şanslıyız!</span>
                             </div>
                         </div>
                         <div class="content-body d-flex justify-content-center">
                             <div class="row row-cols-1 row-cols-md-3 g-4">
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
-                                        <div class="card-body">
-                                            <img src="../assets/coding 1.png" alt="">
+                                        <div class="card-body maxwidth-mobile">
+                                            <img src="../assets/img/coding 1.png" alt="">
                                             <h5>Web Tasarımı</h5>
                                         </div>
                                     </div>
@@ -118,7 +121,7 @@
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <img src="../assets/laptop 2.png" alt="">
+                                            <img src="../assets/img/laptop 2.png" alt="">
                                             <h5>Web Uygulama</h5>
                                         </div>
                                     </div>
@@ -126,7 +129,7 @@
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <img src="../assets/smartphone (1) 1.png" alt="">
+                                            <img src="../assets/img/smartphone (1) 1.png" alt="">
                                             <h5>Mobil Uygulama</h5>
                                         </div>
                                     </div>
@@ -134,7 +137,7 @@
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <img src="../assets/gamepad 1.png" alt="">
+                                            <img src="../assets/img/gamepad 1.png" alt="">
                                             <h5>Oyun Geliştirme</h5>
                                         </div>
                                     </div>
@@ -142,7 +145,7 @@
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <img src="../assets/lightbulb 1.png" alt="">
+                                            <img src="../assets/img/lightbulb 1.png" alt="">
                                             <h5>Yaratıcı Fikirler</h5>
                                         </div>
                                     </div>
@@ -150,7 +153,7 @@
                                 <div class="col-4 col-sm-4">
                                     <div class="card text-center">
                                         <div class="card-body">
-                                            <img src="../assets/customer-support 1.png" alt="">
+                                            <img src="../assets/img/customer-support 1.png" alt="">
                                             <h5>Satış Sonrası Destek</h5>
                                         </div>
                                     </div>
@@ -169,7 +172,7 @@
                     <div class="team-case w-100">
                         <div class="d-flex justify-content-center w-100">
                             <div class="header d-flex justify-content-center">
-                                Ekibimiz
+                                <span>Ekibimiz</span>
                             </div>
                         </div>
                         <div class="content-body content-body-team">
@@ -177,7 +180,7 @@
                                 <div class="col-4 d-flex-justify-content-center p-0">
                                     <div class="card card-team text-center">
                                         <div class="card-body">
-                                            <img src="../assets/guliz 1.png" alt="">
+                                            <img src="../assets/img/guliz 1.png" alt="">
                                             <div class="name-title">
                                                 <h4>Güliz Ay</h4>
                                                 <h5 style="font-weight: 300;">Backend Developer</h5>
@@ -188,7 +191,7 @@
                                 <div class="col-4 d-flex-justify-content-center p-0">
                                     <div class="card card-team text-center">
                                         <div class="card-body">
-                                            <img src="../assets/gizem 1.png" alt="">
+                                            <img src="../assets/img/gizem 1.png" alt="">
                                             <div class="name-title">
                                                 <h4>Gizem Ay</h4>
                                                 <h5 style="font-weight: 300;">FrontEnd Developer</h5>
@@ -199,7 +202,7 @@
                                 <div class="col-4 d-flex-justify-content-center p-0">
                                     <div class="card card-team text-center">
                                         <div class="card-body">
-                                            <img src="../assets/gizem 1.png" alt="">
+                                            <img src="../assets/img/gizem 1.png" alt="">
                                             <div class="name-title">
                                                 <h4>Eda Balcı</h4>
                                                 <h5 style="font-weight: 300;">UI/UX Designer</h5>
@@ -222,40 +225,64 @@
                     <div class="w-100">
                         <div class="d-flex justify-content-center w-100">
                             <div class="header d-flex justify-content-center">
-                                Fiyatlarımız
+                                <span>Fiyatlarımız</span>
                             </div>
                         </div>
                         <div class="content-body">
                             <div class="row row-cols-1 row-cols-md-3 g-4">
-                                <div class="col-4 d-flex-justify-content-center">
+                                <div class="col d-flex-justify-content-center">
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <h5 class="card-title">EKONOMİK</h5>
-                                            <p class="card-text">
-                                                1 Web Site <br> 6 Ay Ücretsiz Destek <br> Hazır Template
-                                            </p>
+                                            <div class="explanation">
+                                                <div class="">
+                                                    1 Web Site
+                                                </div>
+                                                <div class="">
+                                                    6 Ay Ücretsiz Destek
+                                                </div>
+                                                <div class="">
+                                                    Hazır Template
+                                                </div>
+                                            </div>
                                             <h2>400 ₺</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4 d-flex-justify-content-center">
+                                <div class="col d-flex-justify-content-center">
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <h5 class="card-title">E-TİCARET</h5>
-                                            <p class="card-text">
-                                                Sınırsız Sayfa <br> 12 Ay Ücretsiz Destek <br> Hazır Template
-                                            </p>
+                                            <div class="explanation">
+                                                <div class="">
+                                                    Sınırsız Sayfa
+                                                </div>
+                                                <div class="">
+                                                    12 Ay Ücretsiz Destek
+                                                </div>
+                                                <div class="">
+                                                    Hazır Template
+                                                </div>
+                                            </div>
                                             <h2>2500 ₺</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4 d-flex-justify-content-center">
+                                <div class="col d-flex-justify-content-center">
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <h5 class="card-title">KURUMSAL</h5>
-                                            <p class="card-text">
-                                                10 Sayfa <br> 9 Ay Ücretsiz Destek <br> Hazır Template
-                                            </p>
+                                            <div class="explanation">
+                                                <div class="">
+                                                    10 Sayfa
+                                                </div>
+                                                <div class="">
+                                                    9 Ay Ücretsiz Destek
+                                                </div>
+                                                <div class="">
+                                                    Hazır Template
+                                                </div>
+                                            </div>
                                             <h2>1000 ₺</h2>
                                         </div>
                                     </div>
@@ -274,7 +301,7 @@
                     <div>
                         <div class="d-flex justify-content-center w-100">
                             <div class="header d-flex justify-content-center">
-                                Projelerimiz
+                                <span>Projelerimiz</span>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
@@ -284,7 +311,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lemodate.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lemodate.png" alt="">
                                             </div>
                                             <div *ngIf="activeSlideProject === 0" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <button class="link-bg">
@@ -298,7 +325,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/gameshop.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/gameshop.png" alt="">
                                             </div>
                                             <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <div class="link-bg">
@@ -310,7 +337,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lotus.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lotus.png" alt="">
                                             </div>
                                             <div *ngIf="activeSlideProject === 2" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <div class="link-bg">
@@ -322,7 +349,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/new_collection.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/new_collection.png" alt="">
                                             </div>
                                             <div *ngIf="activeSlideProject === 3" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <div class="link-bg">
@@ -352,7 +379,7 @@
         <div class="d-flex w-100 justify-content-center">
             <div class="w-100 row d-flex align-items-center">
                 <div class="col-md-5 card-div-img">
-                    <img src="../../../assets/contact_img.png" alt="">
+                    <img src="../../../assets/img/contact_img.png" alt="">
                 </div>
                 <div class="col-md-7 card-div">
                     <div class="contact-card d-flex justify-content-center align-items-center">
@@ -376,10 +403,10 @@
                             </div>
                             <div class="line"></div>
                             <div class="d-flex align-items-center justify-content-center social-icons">
-                                <img class="social-icon" src="../../../assets/instagram.png" alt="">
-                                <img class="social-icon" src="../../../assets/facebook.png" alt="">
-                                <img class="social-icon" src="../../../assets/linkedn.png" alt="">
-                                <img class="social-icon" src="../../../assets/twitter.png" alt="">
+                                <img class="social-icon" src="../../../assets/img/instagram.png" alt="">
+                                <img class="social-icon" src="../../../assets/img/facebook.png" alt="">
+                                <img class="social-icon" src="../../../assets/img/linkedn.png" alt="">
+                                <img class="social-icon" src="../../../assets/img/twitter.png" alt="">
                             </div>
                         </div>
                     </div>
