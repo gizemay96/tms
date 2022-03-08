@@ -56,17 +56,24 @@
             color: rgb(0, 0, 0) !important;
         }
         .project-link-case {
-            margin-top: -26vw !important;
+            margin-top: -100px !important;
             width: 40% !important;
             cursor: pointer;
         }
     }
-    .zIndex {
-        z-index: 99999 !important;
+    .test-class {
+        z-index: 99999;
+    }
+    .test-class:not(.swiper-slide-active) {
+        z-index: 0 !important;
     }
     .contact-page {
         .card-div-img {
             justify-content: center !important;
+            img {
+                margin-right: 0 !important;
+                margin-bottom: 15px;
+            }
         }
         .contact-card {
             padding: 15px !important;

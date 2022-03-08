@@ -27,7 +27,8 @@
             <div>
 
                 <span class="">
-          <img class="moon-icon" style="width: 30px;" mat-raised-button (click)="drawer.toggle()" src="../../../assets/moon.png" alt="">
+          <img class="moon-icon" style="width: 30px;" mat-raised-button (click)="drawer.toggle()"
+            src="../../../assets/moon.png" alt="">
         </span>
 
                 <div class="c">
@@ -272,13 +273,13 @@
                     <div class="d-flex justify-content-center">
                         <div class="content-body">
                             <swiper [slidesPerView]="'auto'" [centeredSlides]="false" class="swipeProject" [loop]="true" [pagination]="{clickable: true}" (slideChange)="slideChange($event , 'project')" [spaceBetween]="projectSlideMargin" [slideToClickedSlide]="isDesktopDevice" slideClass="test-class"
-                                [speed]="900" #swipeProject>
-                                <ng-template swiperSlide class="zIndex">
+                                [speed]="900" #swipeProject [ngClass]="activeSlideProject === 0 ? 'zIndex' : ''">
+                                <ng-template swiperSlide>
                                     <div>
                                         <div>
                                             <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lemodate.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 0" class="container project-link-case" (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 0" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                             <button class="link-bg">
                         <h6 class="m-0 p-0 link">
                           Lemodate
@@ -292,7 +293,7 @@
                                         <div>
                                             <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/gameshop.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">Gameshop</h6>
                                             </div>
@@ -304,7 +305,7 @@
                                         <div>
                                             <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/lotus.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 2" class="container project-link-case" (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 2" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">Lotus</h6>
                                             </div>
@@ -316,7 +317,7 @@
                                         <div>
                                             <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/new_collection.png" alt="">
                                         </div>
-                                        <div *ngIf="activeSlideProject === 3" class="container project-link-case" (click)="getPage('http://lemodate.com')">
+                                        <div *ngIf="activeSlideProject === 3" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                             <div class="link-bg">
                                                 <h6 class="m-0 p-0 link">NC</h6>
                                             </div>
@@ -338,14 +339,14 @@
 
 </section>
 
-<section id="contact" class="contact-page">
-    <div class="container h-100 d-flex align-items-center">
+<section id="contact" class="contact-page d-flex align-items-center">
+    <div class="container h-100 ">
         <div class="d-flex w-100 justify-content-center">
             <div class="w-100 row d-flex align-items-center">
-                <div class="col-xl-5 card-div-img">
+                <div class="col-md-5 card-div-img">
                     <img src="../../../assets/contact_img.png" alt="">
                 </div>
-                <div class="col-xl-7 card-div">
+                <div class="col-md-7 card-div">
                     <div class="contact-card d-flex justify-content-center align-items-center">
                         <div class="w-80 h-100">
                             <h1>Bizimle İletişime Geçin</h1>

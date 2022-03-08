@@ -1,6 +1,6 @@
-import { ChangeDetectorRef, Component, NgZone, OnInit, ViewChild } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { SwiperComponent } from "swiper/angular";
-import { DeviceDetectorService } from 'ngx-device-detector';
+import { HostListener } from "@angular/core";
 
 // import Swiper core and required components
 import SwiperCore, {
@@ -60,29 +60,36 @@ export class HomeComponent implements OnInit {
 
   isDesktopDevice = true;
 
-  constructor(private cd: ChangeDetectorRef, private router: Router, private deviceService: DeviceDetectorService) {
-    this.epicFunction();
+  links = ['http://lemodate.com', 'https://www.behance.net/gallery/136464999/GAME-WEB-UI-DESIGN', 'https://www.behance.net/gallery/136401191/inlotus-Meditation-App-Ui-Ux-Design', 'https://www.behance.net/gallery/132388687/NEW-COLLECTION-LANDING-PAGE']
+
+
+  constructor(private cd: ChangeDetectorRef, private router: Router) {
   }
 
-  epicFunction() {
-    this.deviceInfo = this.deviceService.getDeviceInfo();
-    const isMobile = this.deviceService.isMobile();
-    const isTablet = this.deviceService.isTablet();
-    const isDesktopDevice = this.deviceService.isDesktop();
-    this.isDesktopDevice = isDesktopDevice;
-    console.log(isMobile , isTablet , this.deviceInfo)
+  @HostListener('window:resize', ['$event'])
+  getScreenSize(event?: any) {
+    const screenHeight = window.innerHeight;
+    const screenWidth = window.innerWidth;
+
+    this.isDesktopDevice = screenWidth > 991;
+    const isMobile = screenWidth < 426;
+    const isTablet = screenWidth < 991 && screenWidth > 426;
+
     if (isMobile) {
       this.sliderMargin = -220;
       this.projectSlideMargin = -175;
     } else if (isTablet) {
-      this.sliderMargin = 38;
+      this.sliderMargin = -100;
       this.projectSlideMargin = 15;
     }
   }
 
 
 
-  ngOnInit() { }
+
+  ngOnInit() { 
+    this.getScreenSize();
+  }
 
   ngAfterViewInit(): void {
     this.slideToProjects(0);
@@ -116,18 +123,14 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getbla() {
-    console.log('asdasd')
-  }
-
   getActiveSlideForBody() {
-    console.log(this.activeSlide)
     return this.activeSlide;
   }
 
 
   goToAnchor(section = '', slideInd = 2, isMobile = false) {
-    this.router.navigate([''], { fragment: section })
+    this.router.navigate([''], { fragment: section });
+    document.getElementById(section)?.scrollIntoView();
     this.slideTo(slideInd);
     if (isMobile) {
       this.sidenav?.toggle();
