@@ -1,4 +1,13 @@
 @media screen and(max-width: 768px) {
+    .content-body {
+        padding: 20px 0 !important;
+        .row {
+            margin: 0 !important;
+        }
+    }
+    .card-body {
+        padding: 0 !important;
+    }
     .active-slide-img {
         width: 30% !important;
         transition: width 900ms;
@@ -50,18 +59,52 @@
         outline: none !important;
     }
     .team {
+        .team-case {
+            padding: 0px 10px !important;
+        }
+        .content-body {
+            padding: 20px 25px !important;
+        }
         .card-team {
             width: 100% !important;
+        }
+        .card-body {
+            img {
+                width: 100% !important;
+                height: auto !important;
+            }
+            h4 {
+                font-size: 1rem !important;
+            }
+            h5 {
+                font-size: 0.9rem !important;
+            }
+        }
+    }
+    .hizmet {
+        .service-case {
+            padding: 0px 10px !important;
+        }
+        .card-body {
+            h5 {
+                font-size: 0.85rem !important;
+            }
         }
     }
     .pricing {
         .card {
             width: 100% !important;
         }
+        .card-body {
+            padding: 10px 0px !important;
+            h5 {
+                font-size: 1rem !important;
+            }
+        }
     }
     .projects {
         .content-body {
-            padding: 25px 30px !important;
+            padding: 15px 10px !important;
             max-width: 95% !important;
             color: rgb(0, 0, 0) !important;
         }

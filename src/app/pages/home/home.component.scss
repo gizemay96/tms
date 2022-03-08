@@ -113,6 +113,7 @@
         max-width: 270px;
     }
     .card {
+        width: unset !important;
         background-color: rgba(255, 255, 255, 0) !important;
         color: white !important;
         max-width: 260px;
@@ -129,7 +130,7 @@
 
 .projects {
     .content-body {
-        padding: 25px 30px !important;
+        padding: 25px 30px;
         max-width: 60%;
         color: rgb(0, 0, 0) !important;
     }
