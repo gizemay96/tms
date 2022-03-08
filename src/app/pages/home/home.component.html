@@ -307,11 +307,11 @@
                         <div class="d-flex justify-content-center">
                             <div class="content-body">
                                 <swiper [slidesPerView]="'auto'" [centeredSlides]="false" class="swipeProject" [loop]="true" [pagination]="{clickable: true}" (slideChange)="slideChange($event , 'project')" [spaceBetween]="projectSlideMargin" [slideToClickedSlide]="isDesktopDevice" slideClass="test-class"
-                                    [speed]="900" #swipeProject [ngClass]="activeSlideProject === 0 ? 'zIndex' : ''">
+                                    [speed]="900" #swipeProject [ngClass]="activeSlideProject === 0 ? 'zIndex' : ''" [longSwipesMs]="4000">
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lemodate.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 0 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lemodate.png" alt="" (click)="!isDesktopDevice ? getPage(links[activeSlideProject]) : null">
                                             </div>
                                             <div *ngIf="activeSlideProject === 0" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <button class="link-bg">
@@ -327,7 +327,7 @@
                                             <div>
                                                 <img [ngClass]="activeSlideProject === 1 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/gameshop.png" alt="">
                                             </div>
-                                            <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
+                                            <div *ngIf="activeSlideProject === 1" class="container project-link-case" (click)="getPage(links[activeSlideProject])" (click)="!isDesktopDevice ? getPage(links[activeSlideProject]) : null">
                                                 <div class="link-bg">
                                                     <h6 class="m-0 p-0 link">Gameshop</h6>
                                                 </div>
@@ -337,7 +337,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lotus.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 2 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/lotus.png" alt="" (click)="!isDesktopDevice ? getPage(links[activeSlideProject]) : null">
                                             </div>
                                             <div *ngIf="activeSlideProject === 2" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <div class="link-bg">
@@ -349,7 +349,7 @@
                                     <ng-template swiperSlide>
                                         <div>
                                             <div>
-                                                <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/new_collection.png" alt="">
+                                                <img [ngClass]="activeSlideProject === 3 ? 'active-slide-project' : 'inactive-slide-project'" src="../assets/img/new_collection.png" alt="" (click)="!isDesktopDevice ? getPage(links[activeSlideProject]) : null">
                                             </div>
                                             <div *ngIf="activeSlideProject === 3" class="container project-link-case" (click)="getPage(links[activeSlideProject])">
                                                 <div class="link-bg">

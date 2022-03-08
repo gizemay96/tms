@@ -77,12 +77,13 @@ export class HomeComponent implements OnInit {
 
     if (isMobile) {
       this.sliderMargin = -220;
-      this.projectSlideMargin = -175;
+      this.projectSlideMargin = -212;
     } else if (isTablet) {
       this.sliderMargin = -100;
-      this.projectSlideMargin = 15;
+      this.projectSlideMargin = -120;
     } else {
       this.sliderMargin = 170;
+      this.projectSlideMargin = 50;
     }
   }
 
