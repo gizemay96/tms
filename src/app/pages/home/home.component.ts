@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
   deviceInfo: any;
   sliderMargin = 30;
-  projectSlideMargin = 0;
+  projectSlideMargin = 50;
 
   isDesktopDevice = true;
 
