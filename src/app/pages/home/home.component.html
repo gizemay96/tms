@@ -230,9 +230,22 @@
                         </div>
                         <div class="content-body">
                             <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <!-- Tabs For Mobile Device -->
+                                <div class="tab-list" *ngIf="isMobileDevice">
+                                    <div class="tab" (click)="changeTab(0)" [ngClass]="selectedTab === 0 ? 'active' : ''">
+                                        EKONOMİK
+                                    </div>
+                                    <div class="tab" (click)="changeTab(1)" [ngClass]="selectedTab === 1 ? 'active' : ''">
+                                        E-TİCARET
+                                    </div>
+                                    <div class="tab" (click)="changeTab(2)" [ngClass]="selectedTab === 2 ? 'active' : ''">
+                                        KURUMSAL
+                                    </div>
+                                </div>
                                 <div class="col d-flex-justify-content-center">
+
                                     <div class="card text-center">
-                                        <div class="card-body">
+                                        <div class="card-body" *ngIf="(isMobileDevice && selectedTab === 0) || !isMobileDevice">
                                             <h5 class="card-title">EKONOMİK</h5>
                                             <div class="explanation">
                                                 <div class="">
@@ -247,9 +260,44 @@
                                             </div>
                                             <h2>400 ₺</h2>
                                         </div>
+
+
+                                        <div class="card-body" *ngIf="isMobileDevice && selectedTab === 1">
+                                            <h5 class="card-title">E-TİCARET</h5>
+                                            <div class="explanation">
+                                                <div class="">
+                                                    Sınırsız Sayfa
+                                                </div>
+                                                <div class="">
+                                                    12 Ay Ücretsiz Destek
+                                                </div>
+                                                <div class="">
+                                                    Hazır Template
+                                                </div>
+                                            </div>
+                                            <h2>2500 ₺</h2>
+                                        </div>
+
+                                        <div class="card-body" *ngIf="isMobileDevice && selectedTab === 2">
+                                            <h5 class="card-title">KURUMSAL</h5>
+                                            <div class="explanation">
+                                                <div class="">
+                                                    10 Sayfa
+                                                </div>
+                                                <div class="">
+                                                    9 Ay Ücretsiz Destek
+                                                </div>
+                                                <div class="">
+                                                    Hazır Template
+                                                </div>
+                                            </div>
+                                            <h2>1000 ₺</h2>
+                                        </div>
+
+
                                     </div>
                                 </div>
-                                <div class="col d-flex-justify-content-center">
+                                <div class="col d-flex-justify-content-center" *ngIf="!isMobileDevice">
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <h5 class="card-title">E-TİCARET</h5>
@@ -268,7 +316,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col d-flex-justify-content-center">
+                                <div class="col d-flex-justify-content-center" *ngIf="!isMobileDevice">
                                     <div class="card text-center">
                                         <div class="card-body">
                                             <h5 class="card-title">KURUMSAL</h5>

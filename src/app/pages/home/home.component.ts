@@ -59,6 +59,9 @@ export class HomeComponent implements OnInit {
   projectSlideMargin = 50;
 
   isDesktopDevice = true;
+  isMobileDevice = false;
+
+  selectedTab = 0;
 
   links = ['http://lemodate.com', 'https://www.behance.net/gallery/136464999/GAME-WEB-UI-DESIGN', 'https://www.behance.net/gallery/136401191/inlotus-Meditation-App-Ui-Ux-Design', 'https://www.behance.net/gallery/132388687/NEW-COLLECTION-LANDING-PAGE']
 
@@ -72,10 +75,10 @@ export class HomeComponent implements OnInit {
     const screenWidth = window.innerWidth;
 
     this.isDesktopDevice = screenWidth > 991;
-    const isMobile = screenWidth < 426;
+    this.isMobileDevice = screenWidth < 426;
     const isTablet = screenWidth < 991 && screenWidth > 426;
 
-    if (isMobile) {
+    if (this.isMobileDevice) {
       this.sliderMargin = -220;
       this.projectSlideMargin = -212;
     } else if (isTablet) {
@@ -143,6 +146,11 @@ export class HomeComponent implements OnInit {
 
   getPage(hrefLink: any) {
     window.open(hrefLink, '_blank');
+  }
+
+  changeTab(val: any){
+    this.selectedTab = val;
+    this.cd.detectChanges();
   }
 
 }

@@ -1,4 +1,7 @@
 @media screen and(max-width: 426px) {
+    section {
+        min-height: 100% !important;
+    }
     .content {
         .header {
             width: 260px;
@@ -32,6 +35,24 @@
             div:nth-child(n+2) {
                 border-left: 1px solid gray;
             }
+        }
+    }
+    .slide-page {
+        padding: 0 !important;
+        margin-bottom: 0 !important;
+        .body {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .contact-page {
+        .card-div {
+            padding: 0 10px;
+        }
+        .contact-card {
+            width: 100% !important;
+            max-width: unset !important;
         }
     }
     .test-class {
@@ -112,6 +133,7 @@
         outline: none !important;
     }
     .team {
+        width: 100%;
         .team-case {
             padding: 0px 5px !important;
         }
@@ -209,4 +231,19 @@
 
 .social-icons {
     margin-top: 2rem !important;
+}
+
+.tab-list {
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    .tab {
+        background: #23549d;
+        padding: 7px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .tab:not(.active) {
+        background: #3a3a3a;
+    }
 }
