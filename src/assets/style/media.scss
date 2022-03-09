@@ -1,6 +1,6 @@
 @media screen and(max-width: 426px) {
     section {
-        min-height: 100% !important;
+        min-height: 80vh!important;
     }
     .content {
         .header {
@@ -8,6 +8,12 @@
             span {
                 display: none !important;
             }
+        }
+    }
+    .home {
+        height: 100vh !important;
+        .body {
+            height: unset !important;
         }
     }
     .greeting {
@@ -44,6 +50,7 @@
             min-height: 50vh;
             display: flex;
             align-items: center;
+            margin: 0 !important;
         }
     }
     .contact-page {
